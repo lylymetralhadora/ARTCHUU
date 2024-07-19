@@ -1,0 +1,119 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    overflow-y: scroll;
+}
+
+.container {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    padding: 10px 20px 0 20px;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+
+.profile_pic{
+    position: absolute;
+    display: flex;
+
+    border-radius: 50%;
+    border: solid 2px #B95D5D;
+    width: 35px;
+    height: 35px;
+
+}
+
+.icon-header {
+    border: solid 2px #B95D5D;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.arts_pic {
+    margin: 16px;
+    width: 24vw;
+    height: 22vw;
+    border-radius: 23px;
+    border: solid 2px #B95D5D;
+}
+.container2{
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.coluna1{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.meio{
+    display: flex;
+    justify-content: center;
+}
+
+.canto{
+    display: flex;
+    justify-content: right;
+}
+
+.profile_roll{
+    display: flex;
+    border-radius: 50%;
+    border: solid 2px #B95D5D;
+    width: 35px;
+    height: 35px;
+}
+
+/*.roll{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    border-radius: 20px;
+    border: solid 2px #B95D5D;
+
+}*/
+
+.arte{
+    margin-left:8%;
+    
+    width: 350px;
+    border-radius: 20px;
+    border: solid 2px #B95D5D;
+
+}
+
+.roll-usuario{
+    display: flex;
+    align-items: center;
+    width: 350px;
+}
+.roll-usuario img{
+    margin-right: 10px;
+}
+
+.pub2 img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.like{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.pub2 p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
