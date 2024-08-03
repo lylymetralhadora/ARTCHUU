@@ -117,3 +117,19 @@ img{
     justify-content: center;
     align-items: center;
 }
+#perfil_3 {
+    color: #C02C2C;
+    width: 25px;
+}
+.navbar{
+    position: fixed;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    bottom: 0px;
+    background-color: white;
+    z-index: 10;
+}
+.navbar ul li{
+    display:inline-block;
+}
