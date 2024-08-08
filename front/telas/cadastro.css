@@ -6,8 +6,16 @@ body{
 }
 input{
     opacity: 0.3;
-    size: 10px;
+    size: 50px;
+    border-radius: 7vw;
 }
 p{
     size: 10px;
+}
+h1 {
+    align-items: center;
+    justify-content: center;
+}
+button {
+    size: 24px;
 }
