@@ -4,36 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario</title>
+    <link rel="stylesheet" href="form.css">
 
 </head>
 <body>
     <h1>
-        usuarios
-    </h1>
-    <form>
-        <input type="text">nome</form>
-    <h1>
         arte
     </h1>
-    <form>
-        <button>postar</button></form>
-    <h1>
-        legenda
-    </h1>
-    <form>
-        <input type="text"> adicionar legenda
-        <button>publicar</button>
-    </form>
-    <h1>
-        venda
-    </h1>
-    <form>clique para permitir <button>vender</button></form>
-    
-    criado em <button>data</button>
+    <form action="#" enctype="multipart/form-data" id="formulario">
+        <label for="">Arte</label>
+        <input type="file" id="imagem" name="imagem">
 
-    <h1>
-        curtidas
-    </h1>
-    <form><button>curtir</button> quantidade</form>
+        <label for="">Legenda</label>
+        <input type="text" id="legenda" name="legenda">
+
+        <button id="postar">Publicar arte</button>
 </body>
+<script src="script_forms.js"></script>
 </html>

@@ -11,7 +11,7 @@ create table usuarios(
     
 create table artes(
 	id			 INT auto_increment primary key,
-	imagem		 VARCHAR(255),
+	arte		 VARCHAR(255),
     legenda		 VARCHAR(255) NOT NULL,
     venda		 boolean default false,
     preco		 float,
