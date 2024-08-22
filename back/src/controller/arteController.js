@@ -1,5 +1,5 @@
-const { Connection } = require('mysql2/typings/mysql/lib/Connection');
-const connection = require('../config/db_pub.sql');
+//const { Connection } = require('mysql2/typings/mysql/lib/Connection');
+const connection = require('../config/db');
 const dotenv = require('dotenv').config();
 
 const fs = require('fs');
@@ -9,14 +9,19 @@ const uploadPath = path.join(__dirname, '..', 'uploads');
 if(!fs.existsSync(uploadPath)) {
     fs.mkdirSync(uploadPath);
 }
+
 async function storeArte(request, response) {
-    if(!request.files) {
+
+    console.log("Entrou no store arte")
+
+    if(!request) {
         return response.status(400).json({
             success: false,
             message: "Arquivo não enviado"
         });
     }
     const imagem = request.files.arte;
+    console.log(imagem)
     const imagemNome = Date.now() + path.extname(imagem.name)
     arte.mv(path.join(uploadPath, imagemNome), (erro) => {
         if(erro) {
@@ -54,6 +59,7 @@ async function storeArte(request, response) {
 }
 
 async function getArtes(request, response) {
+    console.log("Entrou aqui")
     const query = "SELECT * FROM artes order by id desc";
 
     connection.query(query, (err, results) => {
@@ -73,4 +79,8 @@ async function getArtes(request, response) {
             }
         }
     )
+}
+module.exports = {
+    storeArte,
+    getArtes
 }

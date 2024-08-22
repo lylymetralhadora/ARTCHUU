@@ -1,12 +1,15 @@
-const { response } = require("express");
+let button = document.getElementById("postar")
 
-let button = document.getElementById("enviar")
+button.onclick = async function(e) {
+    e.preventDefault();
 
-button.onclick = async function() {
     let form = document.getElementById("formulario");
+
     let dadosForm = new FormData(form);
 
-    const response = await fetch('http://localhost:3000/api/store/pageinic', {
+    console.log(dadosForm)
+
+    const response = await fetch('http://localhost:3000/api/store/artes', {
         method: "POST",
         body: dadosForm
     })
