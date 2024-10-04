@@ -1,25 +1,33 @@
 let button = document.getElementById("postar")
 
-button.onclick = async function(e) {
-    e.preventDefault();
+button.onclick = async function(event) {
+    event.preventDefault();
 
-    let form = document.getElementById("formulario");
+    console.log("entrou no botao")
 
-    let dadosForm = new FormData(form);
+    const imagem = document.getElementById('imagem').files[0];
+    const legenda = document.getElementById("legenda");
 
-    console.log(dadosForm)
+    const data = {imagem, legenda}
+    
+    let formData = new FormData();
+
+    formData.append('imagem', imagem);
+    formData.append('legenda', legenda);
 
     const response = await fetch('http://localhost:3000/api/store/artes', {
-        method: "POST",
-        body: dadosForm
+        method: "POST", 
+        headers: {
+            "Content-Type":"application/json"
+        },
+        body: formData
     })
 
-    let content = await response.json();
+    const results = await responde.json();
 
-    if(content.sucess) {
-        alert("Postado!")
-    } else {
-        alert("Algo deu errado")
-        console.log(content.sql);
-    }
+    if(results.success) {
+    alert(results.message)
+  } else {
+    alert(results.message)
+  }
 }

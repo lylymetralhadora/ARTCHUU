@@ -2,8 +2,10 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background: rgb(255,255,255);
-    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,123,105,1) 48%);
+    /* background: rgb(116, 0, 0); */
+}
+body{
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgb(103, 13, 1) 48%);
 }
 
 main{
@@ -28,14 +30,14 @@ img{
     display: flex;
 
     border-radius: 50%;
-    border: solid 2px #B95D5D;
+    border: solid 2px #ffffff;
     width: 35px;
     height: 35px;
 
 }
 
 .icon-header {
-    border: solid 2px #B95D5D;
+    border: solid 2px #ffffff;
     padding: 10px;
     border-radius: 10px;
 }
@@ -45,7 +47,7 @@ img{
     width: 24vw;
     height: 22vw;
     border-radius: 23px;
-    border: solid 2px #B95D5D;
+    border: solid 2px #ffffff;
 }
 .container2{
     display: grid;
@@ -72,7 +74,7 @@ img{
 .profile_roll{
     display: flex;
     border-radius: 50%;
-    border: solid 2px #B95D5D;
+    border: solid 2px #ffffff;
     width: 35px;
     height: 35px;
 }
@@ -91,8 +93,8 @@ img{
     margin-left:8%;
     
     width: 350px;
-    border-radius: 20px;
-    border: solid 2px #B95D5D;
+    border-radius: 10px;
+    border: solid 2px #ffffff;
 
 }
 
@@ -120,7 +122,7 @@ img{
     align-items: center;
 }
 #perfil_3 {
-    color: #C02C2C;
+    color: #ffffff;
     width: 25px;
 }
 .navbar{

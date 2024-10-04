@@ -1,31 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="cadastro.css">
+    <!-- <link rel="stylesheet" href="cadastro.css"> -->
+    <link rel="stylesheet" href="./cadastro.css">
+    <script src="./cadastro.js" defer></script>
     <title>Página de cadastro</title>
 </head>
+
 <body>
+    <div class="fundo">
     <section>
         <header>
             <img src="7.png" alt="imagem">
         </header>
     </section>
-
     <section>
         
-            <form>
-                <input class="cds" type="text" id="userc" placeholder="USER">
-                <input class="cds" type="text" id="namec" placeholder="NAME">
-                <input class="cds" type="text" id="emailc" placeholder="EMAIL">
-                <input class="cds" type="text" id="passwordc" placeholder="PASSWORD">
-
-                <button id="criar" type-text placeholder="CLICK TO ENTER"></button>
-            </form>
+        <form action="">
+            <label for="userc">User:</label>
+            <input class="cds" type="text" id="userc" placeholder="username">
             
+            <label for="namec">Name:</label>
+            <input class="cds" type="text" id="namec" placeholder="your name">
+            
+            <label for="emailc">Email:</label>
+            <input class="cds" type="text" id="emailc" placeholder="youremail@gmail.com">
+            
+            <label for="passwordc">Password:</label>
+            <input class="cds" type="text" id="passwordc" placeholder="1234">
+            
+            <!-- <input id="criar"  class="cds" type="button" value="CLICK TO ENTER"> -->
+            <button class="cds" id="criar">CLICK TO ENTER</button>
+        </form>
+
         
     </section>
-    <script src="cadastro.js"></script>
+    
 </body>
+</div>
+
 </html>

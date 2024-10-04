@@ -1,25 +1,29 @@
 let criar = document.getElementById("criar");
 
-criar.onclick = async function(e){
+criar.addEventListener("click", async function(e){
     e.preventDefault();
 
-    let name = document.getElementById("namec").value;
-    let user = document.getElementById("userc").value;
+    let nome = document.getElementById("namec").value;
+    let foto = "null";
+    let username = document.getElementById("userc").value;
     let email = document.getElementById("emailc").value;
-    let password = document.getElementById("passwordc").value;
+    let senha = document.getElementById("passwordc").value;
 
-    const response = await fetch('http://localhost:3000/api/login',{
+    let data = {nome, username, email, senha};
+
+    console.log(data)
+    const response = await fetch('http://localhost:3000/api/create/user',{
         method: "POST",
-        headers: {"Content-type" : "application/json:charset=UTF-8"},
+        headers: {"Content-Type" : "application/json"},
         body: JSON.stringify(data)
     });
 
     let content = await response.json();
-
+    console.log(content);
     if (content.success) {
         alert('Sucesso total');
     } else {
         alert('Não');
     }
 
-}
+})
