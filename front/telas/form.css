@@ -1,10 +1,13 @@
 *{
-    margin: 0%;
-    padding: 0%;
+    margin: 0;
+    padding: 0;
+    background-color: #FF8271;
 }
 
-body {
-    background-image: linear-gradient(right, #fff 20%, #FFB7AE 50%, #E65252);
+h1{
+    padding: 20%;
+    text-align: center;
+    color: #ffffff;
 }
 
 form {
@@ -14,4 +17,38 @@ form {
     justify-content: center;
 }
 
+label {
+    padding: 2%;
+    font-size: 7vw;
+    color: #ffffff;
+}
 
+imagem {
+    width: 80vw;
+}
+
+img {
+    width: 60vw;
+}
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 61vw;
+    height: 4vh;
+    border-radius: 7vw;
+    border-color: #ffffff;
+    background-color: #FF8271;
+    font-size: 6vw;
+    color: #ffffff;
+}
+#legenda {
+    width: 50vw;
+    height: 2vh;
+    border-radius: 7vw;
+    border-color: #ffffff;
+    margin-bottom: 103px;
+}
+footer {
+    width: 3vw;
+}

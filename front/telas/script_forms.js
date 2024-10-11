@@ -23,7 +23,7 @@ button.onclick = async function(event) {
         body: formData
     })
 
-    const results = await responde.json();
+    const results = await response.json();
 
     if(results.success) {
     alert(results.message)
