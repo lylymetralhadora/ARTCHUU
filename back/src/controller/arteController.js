@@ -16,7 +16,7 @@ async function storeArte(request, response) {
         request.body.legenda,
     )
 
-    let query = "INSERT INTO artes(imagem, legenda) VALUES(?, ?, ?);";
+    let query = "INSERT INTO artes(imagem, legenda) VALUES(?, ?);";
 
     connection.query(query, params, (err, results) => {
         if(results) {
