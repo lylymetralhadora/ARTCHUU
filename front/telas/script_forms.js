@@ -1,38 +1,52 @@
+const { stringify } = require("querystring");
+
 let button = document.getElementById("postar")
 
-button.onclick = async function(event) {
-    event.preventDefault();
+button.onclick = async function (event) {
+  event.preventDefault();
+  
+  console.log("clicou")
 
-    console.log("entrou no botao")
+  const usuario = document.getElementsByName('usuario_id');
+  const imagem = document.getElementById('imagem').files[0];
+  const legenda = document.getElementById('legenda');
+  //buscar id do usuario e inserir no data
+  const data = { imagem, legenda }
+  
+  let formData = new FormData();
+  formData.append('usuario', usuario_id);
+  formData.append('imagem', imagem);
+  formData.append('legenda', legenda.value);
+  
+  
+  const response = await fetch('http://localhost:3000/api/store/artes', {
+    method: "POST",
+    body: formData
+  });
+  
+  const results = await response.json();
 
-    const imagem = document.getElementById('imagem').files[0];
-    const legenda = document.getElementById("legenda");
-    //let nomeImagem = imagem.name <--- nome da imagem
-    const data = {imagem, legenda}
-
-    /*script_forms.js:11 Uncaught (in promise) ReferenceError: nomeImagem is not defined
-    at button.onclick (script_forms.js:11:19)*/
-    
-    let formData = new FormData(data);
-
-    formData.append('imagem', imagem);
-    formData.append('legenda', legenda);
-
-    console.log(formData);
-
-    const response = await fetch('http://localhost:3000/api/store/artes', {
-        method: "POST", 
-        headers: {
-            "Content-Type":"application/json"
-        },
-        body: formData
-    })
-
-    const results = await response.json();
-
-    if(results.success) {
+  if (results.success) {
     alert(results.message)
   } else {
     alert(results.message)
   }
 }
+
+function savePost(usuario, arte, legenda) {
+  const posts = JSON.parse(localStorage.getItem('posts')) || [];
+  
+  const newPost = {
+    usuario: "",
+    imagem: arte,
+    legenda: legenda
+  }
+
+  posts.push(newPost);
+  localStorage.setItem('posts', JSON.stringify(posts));
+
+}
+
+// document.getElementById('formulario').addEventListener('submit', function(event) => {
+//   preventDefault();
+// })

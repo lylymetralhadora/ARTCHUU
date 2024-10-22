@@ -14,9 +14,10 @@ async function storeArte(request, response) {
     let params = Array(
         request.body.imagem.imagemNome,
         request.body.legenda,
+        request.body.usuario_id,
     )
 
-    let query = "INSERT INTO artes(imagem, legenda) VALUES(?, ?);";
+    let query = "INSERT INTO artes(arte, legenda, usuario_id) VALUES(?, ?, ?);";
 
     connection.query(query, params, (err, results) => {
         if(results) {
