@@ -1,4 +1,4 @@
-const { stringify } = require("querystring");
+//const { stringify } = require("querystring");
 
 let button = document.getElementById("postar")
 
@@ -11,12 +11,12 @@ button.onclick = async function (event) {
   const imagem = document.getElementById('imagem').files[0];
   const legenda = document.getElementById('legenda');
   //buscar id do usuario e inserir no data
-  const data = { imagem, legenda }
-  
+  console.log(usuario);
   let formData = new FormData();
-  formData.append('usuario', usuario_id);
+  formData.append('usuario', usuario);
   formData.append('imagem', imagem);
   formData.append('legenda', legenda.value);
+  console.log(formData);
   
   
   const response = await fetch('http://localhost:3000/api/store/artes', {
@@ -37,7 +37,7 @@ function savePost(usuario, arte, legenda) {
   const posts = JSON.parse(localStorage.getItem('posts')) || [];
   
   const newPost = {
-    usuario: "",
+    usuario: usuario,
     imagem: arte,
     legenda: legenda
   }

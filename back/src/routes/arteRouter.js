@@ -3,7 +3,6 @@ const upload = require('../config/multer');
 const cors = require('cors');
 
 const {storeArte, getArtes} = require('../controller/arteController');
-router.use(cors({ origin: 'http://localhost:3000/api/store/artes' }));
 
 /**
  * @swagger

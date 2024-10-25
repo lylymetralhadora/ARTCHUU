@@ -1,11 +1,13 @@
-async function handleSubmit(event) {
-    event.preventDefault();
+let entrar = document.getElementById("entrar");
+
+entrar.addEventListener("click", async function(e) {
+    e.preventDefault();
 
     const user = document.querySelector("#userc").value;
     const senha = document.querySelector("#passwordc").value;
 
     let dados = {user, senha};
-
+    
     const response = await fetch('http://localhost:3000/api/login', {
         method: "POST",
         headers: {
@@ -13,7 +15,7 @@ async function handleSubmit(event) {
         },
         body: JSON.stringify(dados)
     });
-
+    
     const results = await response.json();
 
     if (results.success) {
@@ -21,6 +23,6 @@ async function handleSubmit(event) {
 
         window.location.href = '../pageinic.html';
     } else {
-        alert(results.message)
+        alert("nao deu :/")
     }
-}
+})

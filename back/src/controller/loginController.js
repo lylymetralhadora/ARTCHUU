@@ -1,15 +1,18 @@
 const connection = require('../config/db');
 
 async function userLog(request, response) {
-    const query = "SELECT id, nome, email, senha FROM usuarios WHERE `user = ?`";
 
-    params = array(
-        request.body.email
+    const params = Array(
+        request.body.user
     );
+    console.log(params);
+    const query = "SELECT * FROM usuarios where username = ? limit 1";
 
     connection.query(query, params, (err, results) => {
+        console.log("results", results)
         try {
             if (results.length > 0) {
+                console.log(results)
                 if (request.body.senha === results[0].senha) {
                     response
                         .status(200)
@@ -19,6 +22,7 @@ async function userLog(request, response) {
                             data: results[0]
                         });
                 } else {
+                    console.log('erro', err)
                     response
                         .status(400)
                         .json({

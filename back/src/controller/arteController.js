@@ -16,7 +16,8 @@ async function storeArte(request, response) {
         request.body.legenda,
         request.body.usuario_id,
     )
-
+        
+        console.log(params);
     let query = "INSERT INTO artes(arte, legenda, usuario_id) VALUES(?, ?, ?);";
 
     connection.query(query, params, (err, results) => {

@@ -6,7 +6,7 @@ const swaggerJsDoc = require("swagger-jsdoc")
 
 const swaggerOptions = {
     swaggerDefinition: {
-        openapi: "1.0.0",
+        openapi: "3.0.0",
         info: {
             title: "Artchuu",
             version: "1.0.0",
