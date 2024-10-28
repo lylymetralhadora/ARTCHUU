@@ -30,14 +30,14 @@ img{
     display: flex;
 
     border-radius: 50%;
-    border: solid 2px #ffffff;
+    border: solid 2px #000000;
     width: 35px;
     height: 35px;
 
 }
 
 .icon-header {
-    border: solid 2px #ffffff;
+    border: solid 2px #000000;
     padding: 10px;
     border-radius: 10px;
 }
@@ -47,7 +47,7 @@ img{
     width: 24vw;
     height: 22vw;
     border-radius: 23px;
-    border: solid 2px #ffffff;
+    border: solid 2px #000000;
 }
 .container2{
     display: grid;
@@ -74,7 +74,7 @@ img{
 .profile_roll{
     display: flex;
     border-radius: 50%;
-    border: solid 2px #ffffff;
+    border: solid 2px #000000;
     width: 35px;
     height: 35px;
 }
@@ -94,7 +94,7 @@ img{
     
     width: 350px;
     border-radius: 10px;
-    border: solid 2px #ffffff;
+    border: solid 2px #000000;
 
 }
 
@@ -122,7 +122,7 @@ img{
     align-items: center;
 }
 #perfil_3 {
-    color: #ffffff;
+    color: #000000;
     width: 25px;
 }
 .navbar{
@@ -131,7 +131,7 @@ img{
     display: grid;
     place-items: center;
     bottom: 0px;
-    background-color: white;
+    background-color: rgb(0, 0, 0);
     z-index: 10;
 }
 .navbar ul li{
