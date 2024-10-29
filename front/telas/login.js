@@ -19,7 +19,8 @@ entrar.addEventListener("click", async function(e) {
     const results = await response.json();
 
     if (results.success) {
-        localStorage.setItem('', JSON.stringify(results.data))
+        localStorage.setItem('user', JSON.stringify(results.data))
+        localStorage.setItem('userId', JSON.stringify(results.data.id))
 
         window.location.href = '../pageinic.html';
     } else {

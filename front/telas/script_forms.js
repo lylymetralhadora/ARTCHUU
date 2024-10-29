@@ -7,17 +7,15 @@ button.onclick = async function (event) {
   
   console.log("clicou")
 
-  const usuario = document.getElementsByName('usuario_id');
   const imagem = document.getElementById('imagem').files[0];
   const legenda = document.getElementById('legenda');
-  //buscar id do usuario e inserir no data
-  console.log(usuario);
+  const usuario = localStorage.getItem('userId')
   let formData = new FormData();
-  formData.append('usuario', usuario);
-  formData.append('imagem', imagem);
+  formData.append('imagem', imagem.name);
   formData.append('legenda', legenda.value);
+  formData.append('usuario', usuario);
+  console.log(imagem.name, legenda.value, usuario);
   console.log(formData);
-  
   
   const response = await fetch('http://localhost:3000/api/store/artes', {
     method: "POST",
