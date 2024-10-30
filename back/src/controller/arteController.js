@@ -12,7 +12,7 @@ if(!fs.existsSync(uploadPath)) {
 
 async function storeArte(request, response) {
     let params = Array(
-        request.body.imagem.imagemNome,
+        request.body.imagem,
         request.body.legenda,
         request.body.usuario_id,
     )
