@@ -40,6 +40,7 @@ button.onclick = async function (event) {
   
   if (results.success) {
     alert(results.message);
+    window.location.href('pageinic.html');
   } else {
     alert(results.message);
   }

@@ -69,7 +69,7 @@ const {storeArte, getArtes} = require('../controller/arteController');
  */
 
 router.post('/store/artes', upload.single('imagem'), storeArte);
-//router.get('/get/pageinic', getArtes);
+router.get('/store/getArtes', getArtes);
 /*router.listen(3000, () => {
     console.log('Servidor ouvindo na porta 3000');
   });*/

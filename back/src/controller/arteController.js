@@ -41,10 +41,6 @@ async function storeArte(request, response) {
     })
 }
 
-module.exports = {
-    storeArte
-}
-
 //     if(!request) {
 //         return response.status(400).json({
 //             success: false,
@@ -89,29 +85,29 @@ module.exports = {
 //     })
 // }
 
-// async function getArtes(request, response) {
-//     console.log("Entrou aqui")
-//     const query = "SELECT * FROM artes order by id desc";
+async function getArtes(request, response) {
+    console.log("Entrou aqui")
+    const query = "SELECT * FROM artes order by id desc";
 
-//     connection.query(query, (err, results) => {
-//             if (results) {
-//                 response.status(200).json({
-//                     success: true,
-//                     message: "Sucesso!",
-//                     data: results
-//                 })
-//             } else {
-//                 response.status(400).json({
-//                     success: false,
-//                     message: "Erro!",
-//                     sql: err,
-//                 })
+    connection.query(query, (err, results) => {
+            if (results) {
+                response.status(200).json({
+                    success: true,
+                    message: "Sucesso!",
+                    data: results
+                })
+            } else {
+                response.status(400).json({
+                    success: false,
+                    message: "Erro!",
+                    sql: err,
+                })
     
-//             }
-//         }
-//     )
-// }
-// module.exports = {
-//     storeArte,
-//     getArtes
-//}
+            }
+        }
+    )
+}
+module.exports = {
+    storeArte,
+    getArtes
+}
