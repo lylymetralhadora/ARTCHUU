@@ -3,12 +3,35 @@ const connection = require('../config/db');
 const dotenv = require('dotenv').config();
 
 const fs = require('fs');
+const { request } = require('http');
 const path = require('path');
 
-const uploadPath = path.join(__dirname, '..', 'uploads');
-if(!fs.existsSync(uploadPath)) {
-    fs.mkdirSync(uploadPath);
-}
+// const uploadPath = path.join(__dirname, '..', 'uploads');
+// if(!fs.existsSync(uploadPath)) {
+//     fs.mkdirSync(uploadPath);
+// }
+
+const storageArte = multer.diskStorage({
+    destination: (request, file, cb) => {
+        cb(null, './uploads');
+    },
+    filename:(request, file, cb) => {
+        cb(null, Date.now() + '-' + arte.legenda);
+    }
+});
+
+const upload = multer({storageArte: storageArte});
+app.post('/upload', upload.single('image'), (request, response) => {
+    if (request.file) {
+        response.json({ message: 'Arquivo enviado com sucesso' });
+    } else {
+        response.status(400).json({ error: 'Nenhum arquivo selecionado' });
+    }
+});
+
+app.listen(port, () => {
+    console.log(`Servidor ouvindo na porta ${port}`);
+});
 
 async function storeArte(request, response) {
     let params = Array(
