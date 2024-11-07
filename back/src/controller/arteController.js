@@ -1,6 +1,10 @@
 //const { Connection } = require('mysql2/typings/mysql/lib/Connection');
+const express = require('express');
 const connection = require('../config/db');
 const dotenv = require('dotenv').config();
+const multer = require('multer');
+const app = express();
+const port = 3000;
 
 const fs = require('fs');
 const { request } = require('http');
