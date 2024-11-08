@@ -23,11 +23,12 @@ async function fetchArtes() {
 
         data.data.forEach(arte => {
         const li = document.createElement('li');
+        const img = document.createElement('img');
+        img.src = `http://localhost:3000/uploads/${arte.getArtes}`;///////
+        li.appendChild(img);
         li.textContent = arte.legenda;
-        // no arte.arte está o nome da imagem, agora precisa que as fotos subam para a pasta e
-        // você gere um img com o nome da imagem buscando da pasta que tenha elas
-        //"../../backend/src/uploads/${arte.arte}"
-        arteList.appendChild(li)
+        arteList.appendChild(li);
+        
         });
     } catch (error) {
         console.error('erro:', error);

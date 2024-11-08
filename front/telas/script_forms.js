@@ -7,33 +7,28 @@ button.onclick = async function (event) {
   
   console.log("clicou")
 
-  const imagem = document.getElementById('imagem').files[0];
-  const legenda = document.getElementById('legenda');
-  const usuario = localStorage.getItem('userId')
-  // const formData = new FormData();
-  // formData.append('imagem', imagem.name);
-  // formData.append('legenda', legenda.value);
-  // formData.append('usuario', usuario)
-  // const data = Array[
-  //   imagem.name,
-  //   legenda.value,
-  //   usuario
-  // ]
-  //const data = [imagem.name, legenda.value, usuario]
-  const data = {
-    "imagem": imagem.name,
-    "legenda": legenda.value,
-    "usuario_id": usuario
-  };
-  console.log(imagem.name, legenda.value, usuario);
-  console.log(data);
+  const arte = document.querySelector('#imagem').files[0];
+  const legenda = document.querySelector('#legenda');
+  const usuario_id = localStorage.getItem('userId');
+
+  
+
+  // const data = {
+    // "imagem": imagem.name,
+    // "legenda": legenda.value,
+    // "usuario_id": usuario.value
+  // };
+
+  let formData = new FormData();
+
+  formData.append("file", arte);
+  formData.append("legenda", legenda);
+  formData.append("usuario_id", usuario_id);
+
   
   const response = await fetch('http://localhost:3000/api/store/artes', {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(data) // Convertendo o objeto data para JSON
+    body: formData,
   });
   
   const results = await response.json();
@@ -46,20 +41,3 @@ button.onclick = async function (event) {
   }
 }
 
-// function savePost(usuario, arte, legenda) {
-//   const posts = JSON.parse(localStorage.getItem('posts')) || [];
-  
-//   const newPost = {
-//     usuario: usuario,
-//     imagem: arte,
-//     legenda: legenda
-//   }
-
-//   posts.push(newPost);
-//   localStorage.setItem('posts', JSON.stringify(posts));
-
-// }
-
-// document.getElementById('formulario').addEventListener('submit', function(event) => {
-//   preventDefault();
-// })
