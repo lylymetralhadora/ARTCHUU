@@ -7,9 +7,12 @@ button.onclick = async function (event) {
   
   console.log("clicou")
 
-  const arte = document.querySelector('#imagem').files[0];
-  const legenda = document.querySelector('#legenda');
-  const usuario_id = localStorage.getItem('userId');
+  const arte = document.getElementById('imagem').files[0].name;
+  console.log('imagem:', arte);
+  const legenda = document.getElementById('legenda').value;
+  console.log('legenda:', legenda);
+  const usuario_id = localStorage.getItem('userId').value;
+  console.log('id:', usuario_id);
 
   
 
@@ -25,6 +28,10 @@ button.onclick = async function (event) {
   formData.append("legenda", legenda);
   formData.append("usuario_id", usuario_id);
 
+  console.log('imagem_1:', arte);
+  console.log('legenda_1:', legenda);
+  console.log('id_1:', usuario_id);
+
   
   const response = await fetch('http://localhost:3000/api/store/artes', {
     method: "POST",
@@ -35,7 +42,7 @@ button.onclick = async function (event) {
   
   if (results.success) {
     alert(results.message);
-    window.location.href="../pageinic.html"
+    window.location.href="./pageinic.html"
   } else {
     alert(results.message);
   }

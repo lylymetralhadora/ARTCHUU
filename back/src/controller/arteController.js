@@ -3,17 +3,17 @@ const connection = require('../config/db');
 
 async function storeArte(request, response) {
     const {legenda, usuario_id} = request.body;
+    console.log(request.body);
     console.log('dados:', legenda, usuario_id);
-    const arte = request.file.filename;
+    const arte = request.body.file;
     console.log('dado arte:', arte);
-
 
     let params = Array(
         arte,
         legenda,
         usuario_id
     );
-        
+
     let query = "INSERT INTO artes(arte, legenda, usuario_id) VALUES(?, ?, ?);";
 
     connection.query(query, params, (err, results) => {

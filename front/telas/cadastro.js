@@ -22,6 +22,7 @@ criar.addEventListener("click", async function(e){
     console.log(content);
     if (content.success) {
         alert('Sucesso total');
+        window.location.href = './login.html';
     } else {
         alert('Não');
     }
