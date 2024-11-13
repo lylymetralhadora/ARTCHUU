@@ -1,5 +1,13 @@
 const connection = require('../config/db');
+const dotenv = require('dotenv').config();
+const fs = require('fs');
+const path = require('path');
 
+const uploadPath = path.join(__dirname, '..', 'uploads');
+
+if(!fs.existsSync(uploadPath)) {
+    fs.mkdirSync(uploadPath);
+}
 
 async function storeArte(request, response) {
     const {legenda, usuario_id} = request.body;
@@ -7,6 +15,13 @@ async function storeArte(request, response) {
     console.log('dados:', legenda, usuario_id);
     const arte = request.body.file;
     console.log('dado arte:', arte);
+
+    if(!request.files) {
+        return response.status(400).json({
+            success: false,
+            message:"sem arquivo"
+        })
+    }
 
     let params = Array(
         arte,

@@ -11,7 +11,7 @@ button.onclick = async function (event) {
   console.log('imagem:', arte);
   const legenda = document.getElementById('legenda').value;
   console.log('legenda:', legenda);
-  const usuario_id = localStorage.getItem('userId').value;
+  const usuario_id = localStorage.getItem('userId');
   console.log('id:', usuario_id);
 
   
@@ -42,7 +42,7 @@ button.onclick = async function (event) {
   
   if (results.success) {
     alert(results.message);
-    window.location.href="./pageinic.html"
+    window.location.href="../pageinic.html"
   } else {
     alert(results.message);
   }

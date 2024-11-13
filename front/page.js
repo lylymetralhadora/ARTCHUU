@@ -24,7 +24,7 @@ async function fetchArtes() {
         data.data.forEach(arte => {
         const li = document.createElement('li');
         const img = document.createElement('img');
-        img.src = `http://localhost:3000/uploads/${arte.getArtes}`;///////
+        img.src = `http://localhost:3000/uploads/${arte.getArtes}`;
         li.appendChild(img);
         li.textContent = arte.legenda;
         arteList.appendChild(li);
