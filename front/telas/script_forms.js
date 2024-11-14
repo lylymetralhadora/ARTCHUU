@@ -6,36 +6,36 @@ button.onclick = async function (event) {
   event.preventDefault();
   
   console.log("clicou")
-
-  const arte = document.getElementById('imagem').files[0].name;
-  console.log('imagem:', arte);
-  const legenda = document.getElementById('legenda').value;
-  console.log('legenda:', legenda);
-  const usuario_id = localStorage.getItem('userId');
-  console.log('id:', usuario_id);
+  
+  let usuario_id = localStorage.getItem('userId');
+  console.log(usuario_id)
+  let form = document.getElementById('formulario');
+  let fDados = new FormData(form);
+  fDados.append("usuario_id", usuario_id);
+  // let arte = document.getElementById('imagem').files[0].value;
+  // console.log('imagem:', arte);
+  // let legenda = document.getElementById('legenda').value;
+  // console.log('legenda:', legenda);
+  // console.log('id:', usuario_id);
 
   
-
   // const data = {
     // "imagem": imagem.name,
     // "legenda": legenda.value,
     // "usuario_id": usuario.value
   // };
 
-  let formData = new FormData();
+  // fDados.append("file", arte);
+  // fDados.append("legenda", legenda);
 
-  formData.append("file", arte);
-  formData.append("legenda", legenda);
-  formData.append("usuario_id", usuario_id);
-
-  console.log('imagem_1:', arte);
-  console.log('legenda_1:', legenda);
-  console.log('id_1:', usuario_id);
+  // console.log('imagem_1:', arte);
+  // console.log('legenda_1:', legenda);
+  // console.log('id_1:', usuario_id);
 
   
-  const response = await fetch('http://localhost:3000/api/store/artes', {
+  const response = await fetch('http://localhost:3000/api/store/storeArte', {
     method: "POST",
-    body: formData,
+    body: fDados
   });
   
   const results = await response.json();
@@ -45,6 +45,7 @@ button.onclick = async function (event) {
     window.location.href="../pageinic.html"
   } else {
     alert(results.message);
+    console.log(results.sql);
   }
 }
 

@@ -89,9 +89,8 @@ img{
 
 }*/
 
-.arte{
+#arte-list{
     margin-left:8%;
-    
     width: 350px;
     border-radius: 10px;
     border: solid 2px #000000;

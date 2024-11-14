@@ -1,9 +1,10 @@
 *{
     margin: 0;
     padding: 0;
-    background-color: #FF8271;
 }
-
+body{
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgb(103, 13, 1) 48%);
+}
 h1{
     padding: 20%;
     text-align: center;
@@ -20,7 +21,7 @@ form {
 label {
     padding: 2%;
     font-size: 7vw;
-    color: #ffffff;
+    color: #010000;
 }
 
 imagem {
@@ -38,7 +39,7 @@ button {
     height: 4vh;
     border-radius: 7vw;
     border-color: #ffffff;
-    background-color: #FF8271;
+    background-color: rgb(103, 13, 1);
     font-size: 6vw;
     color: #ffffff;
 }

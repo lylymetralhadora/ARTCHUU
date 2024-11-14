@@ -14,26 +14,31 @@
 // })
 
 async function fetchArtes() {
-    try {
-        const response = await fetch('http://localhost:3000/api/store/getArtes');
+        const response = await fetch('http://localhost:3000/api/get/getArtes');
         const data = await response.json();
-        console.log(data.data);
+        
         const arteList = document.getElementById('arte-list');
         arteList.innerHTML = '';
 
+        console.log(data)
         data.data.forEach(arte => {
         const li = document.createElement('li');
         const img = document.createElement('img');
-        img.src = `http://localhost:3000/uploads/${arte.getArtes}`;
+        img.src = `http://localhost:3000/uploads/${arte.arte}`;
         li.appendChild(img);
-        li.textContent = arte.legenda;
+        const p = document.createElement('p')
+        p.innerText = `${arte.legenda}`
+
         arteList.appendChild(li);
+        arteList.appendChild(p);
+        }
         
-        });
-    } catch (error) {
-        console.error('erro:', error);
-        const errorElement = document.getElementById('error-element');
-        errorElement.textContent = 'erro ao carregar';
-    }
+        // } catch (error) {
+        //     console.error('erro:', error);
+        //     const errorElement = document.getElementById('error-element');
+        //     errorElement.textContent = 'erro ao carregar';
+        // }
+    );
 }
+
 fetchArtes();

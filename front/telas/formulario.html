@@ -10,10 +10,10 @@
     <h1>
     Nova postagem
     </h1>\
-    <form action="" id="formulario">
+    <form action="" enctype="multipart/form-data" id="formulario">
         <label for="">Arte</label>
         <!-- <img src="../artes/post.png" class="selecionar-imagem" alt="imagem"> -->
-        <input type="file" id="imagem" name="imagem" required onchange="readUrl(this);">
+        <input type="file" id="imagem" name="imagem" required>
 
         <label for="">Legenda</label>
         <input type="text" id="legenda" name="legenda" required>
