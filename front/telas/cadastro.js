@@ -12,7 +12,7 @@ criar.addEventListener("click", async function(e){
     let data = {nome, username, email, senha};
 
     console.log(data)
-    const response = await fetch('http://localhost:3000/api/create/user',{
+    const response = await fetch('http://localhost:3000/api/create/user', {
         method: "POST",
         headers: {"Content-Type" : "application/json"},
         body: JSON.stringify(data)

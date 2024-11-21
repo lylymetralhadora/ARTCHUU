@@ -79,7 +79,33 @@ async function getArtes(request, response) {
     }
     )
 }
+async function getArtesById(request, response) {
+    const params = Array (
+        request.params.id
+    )
+
+    const query = "SELECT artes.id AS id, artes.arte AS imagem, artes.legenda AS legenda, usuarios.nome  FROM artes, usuarios  WHERE artes.usuario_id = usuarios.id AND artes.id = ?";
+
+    connection.query(query, params, (err, results) => {
+        if (results) {
+            response.status(200).json({
+                success: true,
+                message: "Sucesso!",
+                data: results[0]
+            })
+        } else {
+            response.status(400).json({
+                success: false,
+                message: "Erro!",
+                sql: err,
+            })
+
+        }
+    }
+    )
+}
 module.exports = {
     storeArte,
-    getArtes
+    getArtes,
+    getArtesById
 }

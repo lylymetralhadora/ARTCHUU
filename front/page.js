@@ -28,6 +28,9 @@ async function fetchArtes() {
         li.appendChild(img);
         const p = document.createElement('p')
         p.innerText = `${arte.legenda}`
+        img.addEventListener("click", function() {
+            window.location.href = `telas/comentarios.html?id=${arte.id}`
+        })
 
         arteList.appendChild(li);
         arteList.appendChild(p);
