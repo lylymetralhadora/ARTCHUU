@@ -8,6 +8,7 @@ const arteRouter = require('./routes/arteRouter');
 const userRouter = require('./routes/userRouter');
 const loginRouter = require('./routes/loginRouter');
 const cdsRouter = require('./routes/cdsRouter');
+const comentRouter = require('./routes/comentRouter');
 
 const cors = require('cors');
 const app = express();
@@ -22,5 +23,6 @@ app.use("/api", userRouter);
 app.use('/api', arteRouter);
 app.use('/api', loginRouter);
 app.use('/api', cdsRouter);
+app.use('/api', comentRouter);
 
 module.exports = app;
